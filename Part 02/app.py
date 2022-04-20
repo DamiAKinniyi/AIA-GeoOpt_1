@@ -11,9 +11,9 @@ hops = hs.Hops(app)
     "/binomialGraph",
     name = 'Binomial_Graph',
     inputs = [
-        hs.HopsInteger('Order', 'O' , "Set order of the graph", hs.HopsParamAccess.ITEM, default=3),
+        hs.HopsInteger('Order', 'O' , "Set order of the graph", hs.HopsParamAccess.ITEM, default=7),
         hs.HopsInteger('Weight', 'W', "Set edge weights", hs.HopsParamAccess.ITEM, default=5),
-        hs.HopsInteger('Layout', 'L', "Select layout type from 0 to 4", hs.HopsParamAccess.ITEM, default=3)
+        hs.HopsInteger('Layout', 'L', "Select layout type from 0 to 4", hs.HopsParamAccess.ITEM, default=1)
     ],
     outputs = [
         hs.HopsPoint('Nodes', 'N', 'Output points', hs.HopsParamAccess.LIST),

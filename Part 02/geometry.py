@@ -31,7 +31,7 @@ def addWeights(G,w):
     return G
 
 def getNodes(G, layout = 0):
-    lay_all = (nx.kamada_kawai_layout(G), nx.circular_layout(G), nx.shell_layout(G), nx.spiral_layout(G), nx.planar_layout(G))
+    lay_all = (nx.circular_layout(G), nx.kamada_kawai_layout(G), nx.shell_layout(G), nx.spiral_layout(G), nx.planar_layout(G))
     lay = lay_all[layout]
     #print(lay.values())
     nodes = [rg.Point3d( d[0], d[1] , 0) for d in lay.values()]
@@ -39,7 +39,7 @@ def getNodes(G, layout = 0):
     return nodes
 
 def getEdges(G, layout = 0):
-    lay_all = (nx.kamada_kawai_layout(G), nx.circular_layout(G), nx.shell_layout(G), nx.spiral_layout(G), nx.planar_layout(G))
+    lay_all = (nx.circular_layout(G), nx.kamada_kawai_layout(G), nx.shell_layout(G), nx.spiral_layout(G), nx.planar_layout(G))
     lay = lay_all[layout]
 
     edges = []
