@@ -10,16 +10,16 @@ hops = hs.Hops(app)
     name = "Spiky_Mesh", 
     inputs = [
         hs.HopsPoint('Origin', 'O', 'Set centre point of the sphere'),
-        hs.HopsNumber("Radius", "R", "Set sphere radius", default=5),
-        hs.HopsInteger("Small Radius", "r", "Set smaller radius")
+        hs.HopsNumber("Radius", "R", "Set sphere radius", default=2),
+        
     ],
     outputs = [
-        hs.HopsPoint('Sphere', 'S', "Sphere Geometry", hs.HopsParamAccess.ITEM)
+        hs.HopsSurface('Sphere', 'S', "Sphere Geometry", hs.HopsParamAccess.ITEM)
     ]
 )
 
-def create(o, r, c):
-    return geo.createSphere(o, r, c)
+def create(o, r):
+    return geo.createSphere(o, r)
 
 
 if __name__== "__main__":
