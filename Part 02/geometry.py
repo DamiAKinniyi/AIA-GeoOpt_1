@@ -1,19 +1,14 @@
 import rhino3dm as rg
 import random as ra
-import math
 import networkx as nx
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import scipy as sp
 
 def createGraph(n):
     ''' Takes one integer and one float to create a random graph
 
     Parameters
     -------------
-    n = number of nodes in the graph
-    x = float, probability for edge creation'''
+    n = order of the graph
+    '''
 
     G = nx.binomial_tree(n)
     #print(G.edges.data())
@@ -30,17 +25,17 @@ def addWeights(G,w):
     #print(weights)
     nx.set_edge_attributes(G, values = weights, name = 'weight')
     #print(G.edges.data())
-    nx.draw(G)
-    plt.show()
+    #nx.draw(G)
+    #plt.show()
     #print(type(G))
     return G
 
 def getNodes(G, layout = 0):
     lay_all = (nx.kamada_kawai_layout(G), nx.circular_layout(G), nx.shell_layout(G), nx.spiral_layout(G), nx.planar_layout(G))
     lay = lay_all[layout]
-    print(lay.values())
+    #print(lay.values())
     nodes = [rg.Point3d( d[0], d[1] , 0) for d in lay.values()]
-    print(nodes)
+    #print(type(nodes))
     return nodes
 
 def getEdges(G, layout = 0):
@@ -54,7 +49,7 @@ def getEdges(G, layout = 0):
         line = rg.LineCurve(p1, p2)
         edges.append(line)
 
-    print(edges)
+    #print(edges)
     return edges
 
 
